@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wijit-Langcodes</title>
+    <script defer src="extra/scripts.js"></script>
+    <script type="module" src="src/wijit-langcodes.js"></script>
+    <script type="module" src="extra/wijit-code.min.js"></script>
+    <link rel="stylesheet" href="extra/styles.css">
+    <style>
+        input {
+            min-height: 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: var(--bg3-color);
+        }
+
+        wijit-code {
+            background-color: var(--bg1-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-top: 1rem;
+            padding: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wijit-Langcode</h1>
+        <h4>A web component that creates an input and datalist to search for and select IANA language codes.</h4>
+        <details>
+            <summary>Readme</summary>
+            <div id="instructions"></div>
+        </details>
+    </header>
+
+    <h2>Examples</h2>
+    <section>
+        <div class="card">
+            <h3>Basic Example</h3>
+            <input name="lang2" list="wijit-lang-list">
+            <wijit-code highlight>
+                <textarea>
+                    <input list="wijit-lang-list">
+                    <wijit-langcodes></wijit-langcodes>
+                </textarea>
+            </wijit-code>
+        </div>
+
+        <div class="card">
+            <h3>Using a Custom Id</h3>
+            <input name="lang3" list="custom-id">
+            <wijit-langcodes listid="custom-id"></wijit-langcodes>
+            <wijit-code highlight>
+                <textarea>
+                    <input list="custom-id">
+                    <wijit-langcodes listid="custom-id">
+                    </wijit-langcodes>
+                </textarea>
+            </wijit-code>
+        </div>
+
+        <div class="card">
+            <h3>Using Extended Language List</h3>
+            <input name="lang4" list="expanded-list">
+            <wijit-langcodes extended listid="expanded-list"></wijit-langcodes>
+            <wijit-code highlight>
+                <textarea>
+                    <input list="expanded-list">
+                    <wijit-langcodes extended listid="expanded-list"></wijit-langcodes>
+                </textarea>
+            </wijit-code>
+        </div>
+    </section>
+
+    <wijit-langcodes></wijit-langcodes>
+</body>
+</html>
